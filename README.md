@@ -70,6 +70,8 @@ mern-auth/
 │
 └── README.md
 
+```
+
 # 🔐 Authentication Flow
 
 ## 📝 Register
@@ -133,7 +135,7 @@ mern-auth/
   resetOTP: String,
   resetOTPExpireAt: Date
 }
-
+```
 
 # 🛡️ Security Best Practices
 
@@ -159,7 +161,7 @@ SMTP_USER=your_smtp_user
 SMTP_PASS=your_smtp_password
 CLIENT_URL=http://localhost:5173
 
-
+```
 # ⚙️ Frontend Environment Variables
 
 ## Frontend (`client/.env`)
@@ -167,7 +169,7 @@ CLIENT_URL=http://localhost:5173
 ```env
 VITE_BACKEND_URL=http://localhost:4000
 
-
+```
 # ▶️ Getting Started
 
 ## 1️⃣ Clone the Repository
@@ -189,7 +191,7 @@ npm run dev
 cd client
 npm install
 npm run dev
-
+```
 
 # 🎨 UI & UX Highlights
 
