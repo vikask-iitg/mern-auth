@@ -45,12 +45,33 @@ connectDB();
 /* ---------- Middlewares ---------- */
 app.use(express.json());
 app.use(cookieParser());
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://mern-auth-vikas.vercel.app/"
+//     ],
+//     credentials: true,
+//   })
+// );
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://mern-auth-vikas.vercel.app"
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://mern-auth-vikas.vercel.app/"
-    ],
+    origin: function (origin, callback) {
+      // allow requests with no origin (Postman, mobile apps)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
