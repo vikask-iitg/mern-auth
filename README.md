@@ -5,7 +5,7 @@ This project demonstrates how to implement **secure, modern authentication flows
 
 ---
 
-![App Screenshot](assets/Demo_Image_Mern_Auth.jpeg)
+![App Screenshot](![Demo Image](client/src/assets/Demo_Image_Mern_Auth.png)
 
 ## 🚀 Features
 
