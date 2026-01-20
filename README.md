@@ -5,6 +5,8 @@ This project demonstrates how to implement **secure, modern authentication flows
 
 ---
 
+![App Screenshot](assets/Demo_Image_Mern_Auth.jpeg)
+
 ## 🚀 Features
 
 - ✅ User Registration with **hashed passwords**
