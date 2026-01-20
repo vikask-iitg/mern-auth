@@ -5,7 +5,8 @@ This project demonstrates how to implement **secure, modern authentication flows
 
 ---
 
-![Demo Image](client/src/assets/Demo_Image_Mern_Auth.png)
+![MERN Auth Demo](https://raw.githubusercontent.com/vikask-iitg/mern-auth/main/client/src/assets/Demo_Image_Mern_Auth.jpeg)
+
 
 
 ## 🚀 Features
