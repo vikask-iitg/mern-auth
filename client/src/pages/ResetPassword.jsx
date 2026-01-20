@@ -166,8 +166,13 @@ const ResetPassword = () => {
                   maxLength="1"
                   key={index}
                   required
-                  className="w-12 h-12 bg-[#333A5C] text-white text-center text-xl
-                  rounded-md"
+                  className="
+                    w-10 h-10 text-base        /* Mobile (default) */
+                    sm:w-12 sm:h-12 sm:text-lg /* Tablet+ */
+                    md:w-14 md:h-14 md:text-xl /* Desktop */
+                    text-center border rounded
+                    focus:outline-none focus:ring-2 focus:ring-black
+                  "
                   ref={(e) => (inputRefs.current[index] = e)}
                   onInput={(e) => handleInput(e, index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
