@@ -177,14 +177,14 @@ VITE_BACKEND_URL=http://localhost:4000
 ```bash
 git clone https://github.com/your-username/mern-auth.git
 cd mern-auth
-
+```
 ## 2️⃣ Backend Setup
 
 ```bash
 cd server
 npm install
 npm run dev
-
+```
 ## 3️⃣ Frontend Setup
 
 ```bash
