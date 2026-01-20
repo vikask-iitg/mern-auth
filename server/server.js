@@ -27,6 +27,8 @@
 
 // export default app;
 
+import dotenv from "dotenv";
+dotenv.config({ path: "./server/.env" });
 
 import express from "express";
 import cors from "cors";
@@ -34,7 +36,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/mongodb.js";
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import "dotenv/config";
+
 
 
 const app = express();
@@ -45,16 +47,6 @@ connectDB();
 /* ---------- Middlewares ---------- */
 app.use(express.json());
 app.use(cookieParser());
-
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:5173",
-//       "https://mern-auth-vikas.vercel.app/"
-//     ],
-//     credentials: true,
-//   })
-// );
 
 app.use(
   cors({
