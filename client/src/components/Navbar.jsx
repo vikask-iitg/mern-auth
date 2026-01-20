@@ -204,7 +204,7 @@
 
 // export default Navbar;
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { assets } from "../assets/assets.js";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext.jsx";
@@ -213,10 +213,24 @@ import axios from "axios";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const navigate = useNavigate();
   const { userData, backendUrl, setUserData, setIsLoggedin } =
     useContext(AppContext);
+
+  /* ✅ CLOSE DROPDOWN WHEN CLICKING OUTSIDE */
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const sendVerificationOtp = async () => {
     try {
@@ -262,7 +276,7 @@ const Navbar = () => {
       <img src={assets.logo} alt="logo" className="w-28 sm:w-32" />
 
       {userData ? (
-        <div className="relative group">
+        <div ref={menuRef} className="relative group">
           {/* Avatar */}
           <div
             onClick={() => setOpen((prev) => !prev)}
@@ -314,3 +328,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
