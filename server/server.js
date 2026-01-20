@@ -49,7 +49,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://mern-auth-sand-two.vercel.app"
+      "https://mern-auth-vikas.vercel.app/"
     ],
     credentials: true,
   })
