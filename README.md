@@ -5,6 +5,10 @@ This project demonstrates how to implement **secure, modern authentication flows
 
 ---
 
+![MERN Auth Demo](https://raw.githubusercontent.com/vikask-iitg/mern-auth/main/client/src/assets/Demo_Image_Mern_Auth.jpeg)
+
+
+
 ## 🚀 Features
 
 - ✅ User Registration with **hashed passwords**
