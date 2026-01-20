@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
   const { userData, backendUrl, setUserData, setIsLoggedin } =
@@ -51,7 +50,6 @@ const Navbar = () => {
       <img src={assets.logo} alt="" className="w-28 sm:w-32" />
       {userData ? (
         <div
-          onClick={() => setOpen(!open)}
           className="w-8 h-8 flex justify-center items-center rounded-full bg-black
          text-white relative group"
         >
