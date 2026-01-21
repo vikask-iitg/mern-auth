@@ -27,8 +27,6 @@
 
 // export default app;
 
-import dotenv from "dotenv";
-dotenv.config();
 
 import express from "express";
 import cors from "cors";
@@ -50,7 +48,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: true,     
+    origin: true,
     credentials: true,
   })
 );

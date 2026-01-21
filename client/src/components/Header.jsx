@@ -7,7 +7,7 @@ const Header = () => {
     const { userData } = useContext(AppContext);
 
     return (
-        <div className='flex flex-col items-center mt-2- px-4 
+        <div className='flex flex-col items-center mt-2 px-4 
         text-center text-gray-800'>
 
             <img src={assets.header_img} alt=""
