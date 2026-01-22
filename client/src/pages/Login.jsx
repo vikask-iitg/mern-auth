@@ -9,7 +9,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { backendUrl, setIsLoggedin, getUserData, setUserData } = useContext(AppContext);
+  const { backendUrl, setIsLoggedin, getUserData } = useContext(AppContext);
 
   const [state, setState] = useState("Sign Up");
   const [name, setName] = useState("");
@@ -26,20 +26,21 @@ const Login = () => {
 
         if (data.success) {
           setIsLoggedin(true);
+          getUserData();
           navigate('/');
-          toast.success("Logged In Successfully");
+          toast.success("Account Created Successfully");
         } else {
           toast.error(data.message);
         }
       }
       else {
-
+        
         const { data } = await axios.post(backendUrl + '/api/auth/login',
           { email, password })
 
         if (data.success) {
           setIsLoggedin(true);
-          setUserData(data.userData);   // for UI update
+          getUserData();
           navigate('/');
           toast.success("Logged In Successfully");
         } else {
