@@ -26,15 +26,14 @@ const Login = () => {
 
         if (data.success) {
           setIsLoggedin(true);
-          getUserData();
           navigate('/');
-          toast.success("Account Created Successfully");
+          toast.success("Logged In Successfully");
         } else {
           toast.error(data.message);
         }
       }
       else {
-        
+
         const { data } = await axios.post(backendUrl + '/api/auth/login',
           { email, password })
 
