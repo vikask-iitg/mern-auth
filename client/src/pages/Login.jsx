@@ -39,7 +39,6 @@ const Login = () => {
 
         if (data.success) {
           setIsLoggedin(true);
-          getUserData();
           navigate('/');
           toast.success("Logged In Successfully");
         } else {
