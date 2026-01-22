@@ -7,6 +7,8 @@ import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 /* Database */
 connectDB();
 
