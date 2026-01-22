@@ -9,7 +9,7 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const { backendUrl, setIsLoggedin, getUserData } = useContext(AppContext);
+  const { backendUrl, setIsLoggedin, getUserData, setUserData } = useContext(AppContext);
 
   const [state, setState] = useState("Sign Up");
   const [name, setName] = useState("");
@@ -39,6 +39,7 @@ const Login = () => {
 
         if (data.success) {
           setIsLoggedin(true);
+          setUserData(data.userData);   // for UI update
           navigate('/');
           toast.success("Logged In Successfully");
         } else {
