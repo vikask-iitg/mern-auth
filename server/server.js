@@ -16,10 +16,11 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: true,
+    origin: process.env.CLIENT_URL,
     credentials: true,
   })
 );
+
 
 /* Routes */
 app.get("/", (req, res) => {
