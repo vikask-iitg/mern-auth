@@ -211,7 +211,7 @@ export const sendResetOtp = async (req, res) => {
         const otp = String(Math.floor(100000 + Math.random() * 900000));
 
         user.resetOtp = otp;
-        user.resetOtpExpireAt = Date.now() + 15 * 60 * 60 * 1000;
+        user.resetOtpExpireAt = Date.now() + 15 * 60 * 1000;
 
         await user.save();
 
@@ -261,10 +261,7 @@ export const verifyResetOtp = async (req, res) => {
         });
 
     } catch (error) {
-        return res.status(500).json({
-            success: false,
-            message: error.message
-        });
+        return res.status(500).json({ success: false, message: error.message });
     }
 };
 
