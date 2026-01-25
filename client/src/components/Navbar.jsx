@@ -13,7 +13,7 @@ const Navbar = () => {
   const { userData, backendUrl, setUserData, setIsLoggedin } =
     useContext(AppContext);
 
-  /* CLOSE DROPDOWN WHEN CLICKING OUTSIDE */
+  /* Close dropdown when clicking outside */
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -22,15 +22,14 @@ const Navbar = () => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const sendVerificationOtp = async () => {
     try {
       axios.defaults.withCredentials = true;
       const { data } = await axios.post(
-        backendUrl + "/api/auth/send-verify-otp"
+        backendUrl + "/api/auth/send-verify-otp",
       );
 
       if (data.success) {
@@ -42,7 +41,7 @@ const Navbar = () => {
       }
     } catch (error) {
       toast.error(
-        error?.response?.data?.message || error.message || "Server error"
+        error?.response?.data?.message || error.message || "Server error",
       );
     }
   };
@@ -60,7 +59,7 @@ const Navbar = () => {
       }
     } catch (error) {
       toast.error(
-        error?.response?.data?.message || error.message || "Server error"
+        error?.response?.data?.message || error.message || "Server error",
       );
     }
   };
@@ -122,4 +121,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
